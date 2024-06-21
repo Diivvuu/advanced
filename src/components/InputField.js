@@ -8,7 +8,7 @@ const InputField = ({ id, label, type, value, onChange, required }) => {
         type={type}
         id={id}
         value={value}
-        onChange={onchange}
+        onChange={onChange}
         required={required}
       />
     </div>
