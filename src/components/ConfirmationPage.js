@@ -40,58 +40,58 @@ const ConfirmationPage = ({ data }) => {
   };
 
   return (
-    <div>
-      <h2>Submitted Data</h2>
-      <p>
+    <div className="max-w-md mx-auto mt-8 p-6 bg-bomb-blast-gray rounded-lg shadow-bomb-blast">
+      <h2 className="text-2xl text-bomb-blast-yellow mb-4">Submitted Data</h2>
+      <p className="text-bomb-blast-white">
         <strong>Full Name:</strong> {data.fullName}
       </p>
-      <p>
+      <p className="text-bomb-blast-white">
         <strong>Email:</strong> {data.email}
       </p>
-      <p>
+      <p className="text-bomb-blast-white">
         <strong>Survey Topic:</strong> {data.surveyTopic}
       </p>
       {data.surveyTopic === "Technology" && (
         <>
-          <p>
+          <p className="text-bomb-blast-white">
             <strong>Favorite Programming Language:</strong>{" "}
             {data.favoriteLanguage}
           </p>
-          <p>
+          <p className="text-bomb-blast-white">
             <strong>Years of Experience:</strong> {data.yearsOfExperience}
           </p>
         </>
       )}
       {data.surveyTopic === "Health" && (
         <>
-          <p>
+          <p className="text-bomb-blast-white">
             <strong>Exercise Frequency:</strong> {data.exerciseFrequency}
           </p>
-          <p>
+          <p className="text-bomb-blast-white">
             <strong>Diet Preference:</strong> {data.dietPreference}
           </p>
         </>
       )}
       {data.surveyTopic === "Education" && (
         <>
-          <p>
+          <p className="text-bomb-blast-white">
             <strong>Highest Qualification:</strong> {data.highestQualification}
           </p>
-          <p>
+          <p className="text-bomb-blast-white">
             <strong>Field of Study:</strong> {data.fieldOfStudy}
           </p>
         </>
       )}
-      <p>
+      <p className="text-bomb-blast-white">
         <strong>Feedback:</strong> {data.feedback}
       </p>
 
       {additionalQuestions.length > 0 && (
         <>
-          <h3>Additional Questions</h3>
+          <h3 className="text-xl text-bomb-blast-yellow mt-4 mb-2">Additional Questions</h3>
           {additionalQuestions.map((question, index) => (
-            <div key={index}>
-              <label>{question}</label>
+            <div key={index} className="mb-4">
+              <label className="block mb-1 text-bomb-blast-yellow">{question}</label>
               <TextAreaField
                 value={answers[question]}
                 onChange={(e) => handleAnswerChange(question, e.target.value)}
@@ -100,7 +100,12 @@ const ConfirmationPage = ({ data }) => {
               />
             </div>
           ))}
-          <button onClick={handleSubmitAnswers}>Submit Answers</button>
+          <button
+            onClick={handleSubmitAnswers}
+            className="bg-bomb-blast-red hover:bg-bomb-blast-orange text-bomb-blast-white py-2 px-4 rounded w-full mt-4"
+          >
+            Submit Answers
+          </button>
         </>
       )}
     </div>

@@ -33,8 +33,7 @@ const Form = () => {
       yearsOfExperience: surveyTopic === "Technology" ? yearsOfExperience : "",
       exerciseFrequency: surveyTopic === "Health" ? exerciseFrequency : "",
       dietPreference: surveyTopic === "Health" ? dietPreference : "",
-      highestQualification:
-        surveyTopic === "Education" ? highestQualification : "",
+      highestQualification: surveyTopic === "Education" ? highestQualification : "",
       fieldOfStudy: surveyTopic === "Education" ? fieldOfStudy : "",
       feedback,
     };
@@ -80,10 +79,7 @@ const Form = () => {
   }
 
   return (
-    <form
-      onSubmit={handleFormSubmit}
-      className="max-w-md mx-auto mt-8 p-6 bg-gray-900 rounded-lg shadow-lg"
-    >
+    <form onSubmit={handleFormSubmit} className="max-w-md mx-auto mt-8 p-6 bg-gray-900 rounded-lg shadow-lg">
       <InputField
         id="fullName"
         label="Full Name:"
@@ -150,11 +146,7 @@ const Form = () => {
         className="mb-4"
       />
 
-      <button
-        type="submit"
-        disabled={formSubmitted}
-        className="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded w-full"
-      >
+      <button type="submit" disabled={formSubmitted} className="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded w-full">
         Submit
       </button>
     </form>
